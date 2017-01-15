@@ -13,8 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-// Primary Route for ApiCalls, using Ajax middleware for enhanced security
+// Primary Route for ApiCalls, using Ajax middleware for extra security
+
 Route::get('package/{package}', [
 		'as'   => 'getPackage', 
 		'uses' => 'Packages@getPackage'
-	])->middleware('ajax');
+])->middleware('ajax');
