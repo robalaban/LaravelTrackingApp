@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+// Primary Route for ApiCalls, using Ajax middleware for enhanced security
+Route::get('package/{package}', [
+		'as'   => 'getPackage', 
+		'uses' => 'Packages@getPackage'
+	])->middleware('ajax');
